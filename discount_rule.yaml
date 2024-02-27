@@ -1,0 +1,11 @@
+---
+name: Discount Rule
+description: Apply a 10% discount for orders above $100
+conditions:
+  - field: order_total
+    operator: ">"
+    value: 100
+actions:
+  - type: modify_field
+    field: order_total
+    expression: "value * 0.9"
