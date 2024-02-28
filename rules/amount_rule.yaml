@@ -1,0 +1,6 @@
+rule_name: categorize_transactions
+conditions:
+  - field: amount
+    operator: greater_than
+    value: 100
+action: categorize_high_amount
