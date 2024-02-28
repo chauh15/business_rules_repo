@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rule Input Form</title>
+</head>
+<body>
+
+<h1>Rule Input Form</h1>
+
+<form id="ruleForm">
+    <label for="ruleName">Rule Name:</label>
+    <input type="text" id="ruleName" name="ruleName" required>
+
+    <label for="inputField">Input Field:</label>
+    <input type="text" id="inputField" name="inputField" required>
+
+    <label for="outputField">Output Field:</label>
+    <input type="text" id="outputField" name="outputField" required>
+
+    <label for="ruleType">Rule Type:</label>
+    <select id="ruleType" name="ruleType" required>
+        <option value="custom_transform">Custom Transform</option>
+        <!-- Add other rule types as needed -->
+    </select>
+
+    <button type="button" onclick="submitRule()">Submit Rule</button>
+</form>
+
+<script>
+    function submitRule() {
+        // Get form data
+        const ruleData = {
+            rule_name: document.getElementById('ruleName').value,
+            input_field: document.getElementById('inputField').value,
+            output_field: document.getElementById('outputField').value,
+            rule_type: document.getElementById('ruleType').value
+        };
+
+        // Send rule data to Flask API
+        fetch('http://localhost:5000/submit_rule', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(ruleData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message);
+            // Optionally, update UI or perform additional actions after successful submission
+        })
+        .catch(error => {
+            console.error('Error submitting rule:', error);
+            alert('Error submitting rule. Check console for details.');
+        });
+    }
+</script>
+
+</body>
+</html>
