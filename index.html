@@ -1,0 +1,37 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Rule Submission</title>
+</head>
+<body>
+    <h1>Submit Business Rule</h1>
+    <form id="ruleForm">
+        <label for="ruleName">Rule Name:</label>
+        <input type="text" id="ruleName" name="ruleName" required><br><br>
+
+        <!-- Add more input fields for conditions, actions, etc. -->
+		<label for="inputField">Input Field:</label>
+		<input type="text" id="inputField" name="inputField" required><br><br>
+
+		<label for="outputField">Output Field:</label>
+		<input type="text" id="outputField" name="outputField" required><br><br>
+
+		<label for="ruleType">Rule Type:</label>
+		<select id="ruleType" name="ruleType" required>
+			<option value="custom_transform">Custom Transform</option>
+			<!-- Add other rule types as needed -->
+			<option value="simple_transform">Simple Transform</option>
+			<option value="complex_transform">Complex Transform</option>
+			<option value="add_timestamp">Add Timestamp</option>
+		</select>
+
+        <button type="button" onclick="submitRule()">Submit Rule</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>

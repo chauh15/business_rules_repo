@@ -1,0 +1,4 @@
+rule_name: capitalize_names
+input_field: Name
+output_field: CapitalizedName
+rule_type: capitalize

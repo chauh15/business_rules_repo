@@ -1,0 +1,4 @@
+input_field: date
+output_field: time
+ruleName: add_new
+rule_type: simple_transform

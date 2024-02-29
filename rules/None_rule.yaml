@@ -1,0 +1,4 @@
+input_field: Name
+output_field: FName
+rule_name: new
+rule_type: simple

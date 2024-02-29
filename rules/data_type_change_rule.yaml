@@ -1,0 +1,4 @@
+input_field: date
+output_field: time
+ruleName: data_type_change
+rule_type: complex_transform

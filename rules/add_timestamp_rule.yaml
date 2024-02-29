@@ -1,4 +1,4 @@
-rule_name: add_timestamp
 input_field: Date
 output_field: Timestamp
+ruleName: add_timestamp
 rule_type: add_timestamp
