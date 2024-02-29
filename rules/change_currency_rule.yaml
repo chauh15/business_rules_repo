@@ -1,0 +1,4 @@
+input_field: currency
+output_field: amount
+ruleName: change_currency
+rule_type: simple_transform
